@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "target": "ES6",
+    "lib": ["ES6", "DOM"],
+    "strict": true,
+    "jsx": "react",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "typeRoots": ["./node_modules/@types", "./node_modules/@figma/plugin-typings"]
+  },
+  "include": ["src"]
+}
