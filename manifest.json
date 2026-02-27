@@ -1,8 +1,12 @@
 {
-  "name": "StyleGuide AI",
+  "name": "Copper",
   "id": "copper-plugin",
   "api": "1.0.0",
   "main": "dist/code.js",
   "ui": "dist/ui.html",
-  "editorType": ["figma"]
+  "editorType": ["figma"],
+  "networkAccess": {
+    "allowedDomains": ["https://api.anthropic.com"],
+    "reasoning": "Calls the Anthropic Claude API to generate UX copy suggestions based on selected Figma text layers."
+  }
 }

@@ -1,6 +1,8 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlInlineScriptPlugin = require('html-inline-script-webpack-plugin');
+const webpack = require('webpack');
 const path = require('path');
+require('dotenv').config({ override: true });
 
 module.exports = {
   entry: {
@@ -25,6 +27,10 @@ module.exports = {
         test: /\.css$/,
         use: ['style-loader', 'css-loader'],
       },
+      {
+        test: /\.md$/,
+        type: 'asset/source',
+      },
     ],
   },
   plugins: [
@@ -35,5 +41,8 @@ module.exports = {
       inject: 'body',
     }),
     new HtmlInlineScriptPlugin(),
+    new webpack.DefinePlugin({
+      'process.env.ANTHROPIC_API_KEY': JSON.stringify(process.env.ANTHROPIC_API_KEY),
+    }),
   ],
 };
